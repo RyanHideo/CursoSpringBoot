@@ -2,23 +2,20 @@ package com.example.Project_Web_Spring.entity;
 
 import java.util.Set;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
-@Entity
+@Document
 @Table(name = "usuarios")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    private String id;
     // @ManyToMany
     // private List<Role> roles;
-    @ManyToMany
     private Set<Role> roles;
     private String name;
     private String email;
@@ -26,7 +23,7 @@ public class User {
     public User() {
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
@@ -35,7 +32,7 @@ public class User {
         this.email = email;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

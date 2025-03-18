@@ -1,14 +1,14 @@
 package com.example.Project_Web_Spring.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.example.Project_Web_Spring.entity.User;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends MongoRepository<User, String> {
 
     @Query("Select u from User u where u.name like %?1%")
-    User Encontrarpornome(String name);
+    User findByName(String name);
 
     User findByEmail(String email);
 

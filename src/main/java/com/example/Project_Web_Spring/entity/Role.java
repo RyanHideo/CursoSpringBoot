@@ -1,22 +1,22 @@
 package com.example.Project_Web_Spring.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import jakarta.persistence.Id;
 
-@Entity
+@Document
 public class Role {
-        @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+
+    @Id
+    // @GeneratedValue(strategy= GenerationType.AUTO)
+    private String id;
     private String name;
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
