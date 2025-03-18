@@ -10,9 +10,10 @@ public interface UserRepository extends MongoRepository<User, String> {
     @Query("Select u from User u where u.name like %?1%")
     User findByName(String name);
 
+    @org.springframework.data.mongodb.repository.Query("{ 'email' : ?0 }")
     User findByEmail(String email);
 
     User findById(int id);
 
-    User findByNameIgnoreCase(String name);
+    User findByNameIgnoreCaseLike(String name);
 }

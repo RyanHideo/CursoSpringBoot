@@ -26,7 +26,7 @@ public class DataInitializer implements ApplicationListener<ContextRefreshedEven
             createdUser("Kleber", "JoaoKleber@gmail.com");
             createdUser("Maria", "MariaMaria@gmail.com");
         }
-        User user = userRepository.findByNameIgnoreCase("ryan");
+        User user = userRepository.findByEmail("RyanHideoOugaske@gmail.com");
         System.out.println(user.getName());
         //pegar o resgistro kleber
         //User user = userRepository.getOne(2L);
